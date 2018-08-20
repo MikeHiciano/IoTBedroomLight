@@ -4,7 +4,7 @@ import RPi.GPIO as GPIO
 
 
 GPIO.setmode(GPIO.BCM)
-GPIO.setup(17,GPIO.OUT)
+GPIO.setup(17,GPIO.OUT) #output
 
 conn = sqlite3.connect('registry.db', check_same_thread= False)
 c = conn.cursor()
