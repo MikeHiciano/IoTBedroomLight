@@ -67,11 +67,15 @@ def message(msg):
             bot.sendMessage(chat_id,"turning lights off!")
             time.sleep(5)
 
-        if msg['text'] == '/readdb':
-            read_db(chat_id)
+        if msg['text'] == '/toogle':
+            for i in range(0,3):
+                GPIO.output(17,GPIO.HIGH)
+                time.sleep(0.3)
+                GPIO.output(17,GPIO.LOW)
+                time.sleep(0.3)
 
 if __name__ == '__main__':
-    
+
     bot = telepot.Bot('') #put the telegram bot key here!
     create_table()
     print('Listening ...')
